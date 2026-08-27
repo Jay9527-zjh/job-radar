@@ -1,22 +1,60 @@
 {
   "sources": [
     {
-      "name": "国务院国资委招聘",
-      "url": "https://www.sasac.gov.cn/n2588035/n2588325/n2588350/index.html",
+      "name": "中国航空发动机集团有限公司",
+      "url": "https://www.aecc.cn/",
       "org_type": "央企",
-      "industry": "综合"
+      "industry": "航空航天",
+      "default_location": "全国",
+      "default_degree": "学历见公告",
+      "apply_url": "https://aecc.iguopin.com/",
+      "max_links": 20
     },
     {
       "name": "中国科学院力学研究所",
       "url": "https://imech.cas.cn/zpxx/",
       "org_type": "科研院所",
-      "industry": "航空航天"
+      "industry": "航空航天",
+      "default_location": "北京",
+      "default_degree": "学历见公告",
+      "max_links": 40
     },
     {
       "name": "中国科学院工程热物理研究所",
       "url": "https://iet.cas.cn/team/zp/",
       "org_type": "科研院所",
-      "industry": "能源动力"
+      "industry": "能源动力",
+      "default_location": "北京",
+      "default_degree": "学历见公告",
+      "max_links": 35
+    },
+    {
+      "name": "中国电子科技集团有限公司",
+      "url": "https://www.cetc.com.cn/zgdk/1593022/1592495/index.html",
+      "org_type": "央企",
+      "industry": "电子半导体",
+      "default_location": "全国",
+      "default_degree": "学历见公告",
+      "max_links": 35
+    },
+    {
+      "name": "中国机械科学研究总院集团有限公司",
+      "url": "https://www.cam.com.cn/channels/640.html",
+      "org_type": "央企",
+      "industry": "机械装备",
+      "default_location": "北京",
+      "default_degree": "学历见公告",
+      "apply_url": "https://camzhaopin.zhiye.com/",
+      "max_links": 35
+    },
+    {
+      "name": "中国机械总院集团北京机电研究所有限公司",
+      "url": "https://brimet.cam.com.cn/JDYJS/channels/1663.html",
+      "org_type": "央企",
+      "industry": "机械装备",
+      "default_location": "北京",
+      "default_degree": "学历见公告",
+      "max_links": 25
     }
   ]
 }
