@@ -1,32 +1,231 @@
 {
   "meta": {
-    "updated_at": "2026-08-27 09:47",
-    "version": "V2-clean",
+    "updated_at": "2026-08-27 10:14",
+    "version": "V3-wide",
     "sources": [
+      "中国航天科工集团有限公司2027届校园招聘",
+      "中国航天科技集团有限公司人才招聘",
+      "军工人才网校招职位",
       "中国航空发动机集团有限公司",
+      "中国科学院空间应用工程与技术中心",
       "中国科学院力学研究所",
       "中国科学院工程热物理研究所",
       "中国电子科技集团有限公司",
       "中国机械科学研究总院集团有限公司",
       "中国机械总院集团北京机电研究所有限公司"
     ],
-    "note": "严格招聘标题过滤；自动剔除栏目导航、招生、公示和明确过期岗位。"
+    "note": "扩展航天科工、航天科技、军工人才网和空间应用方向；保留官方入口型机会，剔除栏目导航、招生、公示和明显过期/跑偏岗位。"
   },
   "jobs": [
     {
-      "id": "c5bc70690936abe2",
+      "id": "6aeea4fe702b1b39",
+      "company": "中国航天科工集团有限公司",
+      "title": "中国航天科工集团有限公司2027届校园招聘（651个岗位）",
+      "location": "北京/全国",
+      "org_type": "央企",
+      "industry": "国防军工",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "内置浏览器核验：航天科工2027届校园招聘官网当前展示651个岗位，覆盖中国航天科工防御技术研究院、飞航技术研究院、运载技术研究院、动力技术研究院等重点单位。",
+      "updated": "2026-08-27",
+      "deadline": "",
+      "score": 99,
+      "source_name": "官方招聘入口/公开公告",
+      "url": "https://casicjob.iguopin.com/job",
+      "apply_url": "https://casicjob.iguopin.com/job",
+      "tags": [
+        "航天科工",
+        "2027",
+        "硕士",
+        "博士",
+        "导弹",
+        "制导",
+        "总体",
+        "结构",
+        "仿真",
+        "控制"
+      ]
+    },
+    {
+      "id": "7fec8f3cbf1b89e5",
+      "company": "中国航天科工防御技术研究院（二院）",
+      "title": "中国航天科工防御技术研究院（二院）2027届校园招聘入口",
+      "location": "北京/多地",
+      "org_type": "央企",
+      "industry": "国防军工",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "航天科工二院为防御技术总体研究院，已出现在航天科工2027届校园招聘官网招聘单位池中，适合关注总体、控制、电子、制导、仿真、软件与测试方向。",
+      "updated": "2026-08-27",
+      "deadline": "",
+      "score": 99,
+      "source_name": "官方招聘入口/公开公告",
+      "url": "https://casicjob.iguopin.com/job",
+      "apply_url": "https://casicjob.iguopin.com/job",
+      "tags": [
+        "航天科工",
+        "防御技术",
+        "二院",
+        "2027",
+        "硕士",
+        "博士",
+        "制导",
+        "控制",
+        "仿真"
+      ]
+    },
+    {
+      "id": "5dd822f4cd70437f",
+      "company": "中国航天科工飞航技术研究院（三院）",
+      "title": "中国航天科工飞航技术研究院（三院）2027届校园招聘入口",
+      "location": "北京/多地",
+      "org_type": "央企",
+      "industry": "国防军工",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "航天科工三院已出现在航天科工2027届校园招聘官网招聘单位池中，重点关注飞航、总体、气动、结构、动力、控制、电子信息和软件研发岗位。",
+      "updated": "2026-08-27",
+      "deadline": "",
+      "score": 99,
+      "source_name": "官方招聘入口/公开公告",
+      "url": "https://casicjob.iguopin.com/job",
+      "apply_url": "https://casicjob.iguopin.com/job",
+      "tags": [
+        "航天科工",
+        "飞航",
+        "三院",
+        "2027",
+        "硕士",
+        "博士",
+        "气动",
+        "结构",
+        "控制"
+      ]
+    },
+    {
+      "id": "29cb63c39f1ab331",
+      "company": "中国航天科工信息技术研究院（一院）",
+      "title": "中国航天科工信息技术研究院（一院）2027届校园招聘关注入口",
+      "location": "北京/全国",
+      "org_type": "央企",
+      "industry": "国防军工",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "航天科工一院属于航天科工重点研究院体系，建议通过航天科工招聘官网持续检索信息技术、软件、网络安全、电子信息、智能化系统等方向。",
+      "updated": "2026-08-27",
+      "deadline": "",
+      "score": 99,
+      "source_name": "官方招聘入口/公开公告",
+      "url": "https://casicjob.iguopin.com/job",
+      "apply_url": "https://casicjob.iguopin.com/job",
+      "tags": [
+        "航天科工",
+        "一院",
+        "2027",
+        "硕士",
+        "博士",
+        "软件",
+        "电子",
+        "控制"
+      ]
+    },
+    {
+      "id": "55ff660297dcc19a",
+      "company": "中国航天科工运载技术研究院",
+      "title": "中国航天科工运载技术研究院2027届校园招聘入口",
+      "location": "湖北/北京/全国",
+      "org_type": "央企",
+      "industry": "国防军工",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "航天科工运载技术研究院已出现在航天科工2027届校园招聘官网招聘单位池中，适合关注运载、动力、结构强度、仿真、热控、电气与试验方向。",
+      "updated": "2026-08-27",
+      "deadline": "",
+      "score": 99,
+      "source_name": "官方招聘入口/公开公告",
+      "url": "https://casicjob.iguopin.com/job",
+      "apply_url": "https://casicjob.iguopin.com/job",
+      "tags": [
+        "航天科工",
+        "运载",
+        "2027",
+        "硕士",
+        "博士",
+        "动力工程",
+        "结构",
+        "热控",
+        "电气"
+      ]
+    },
+    {
+      "id": "16adcada51dc4329",
+      "company": "中国航天科技集团有限公司",
+      "title": "中国航天科技集团有限公司2027届校园招聘岗位入口",
+      "location": "北京/全国",
+      "org_type": "央企",
+      "industry": "国防军工",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "内置浏览器核验：航天科技集团国聘招聘页已展示2027校园招聘岗位，含北京神舟航天软件、上海航天设备制造总厂等单位。",
+      "updated": "2026-08-27",
+      "deadline": "",
+      "score": 99,
+      "source_name": "官方招聘入口/公开公告",
+      "url": "https://spacechina.iguopin.com/job-campus",
+      "apply_url": "https://spacechina.iguopin.com/job-campus",
+      "tags": [
+        "航天科技",
+        "2027",
+        "硕士",
+        "博士",
+        "火箭",
+        "卫星",
+        "机械",
+        "智能制造"
+      ]
+    },
+    {
+      "id": "6085dc7e157edc51",
+      "company": "中国运载火箭技术研究院（航天一院）",
+      "title": "中国运载火箭技术研究院（航天一院）2027届校园招聘关注入口",
+      "location": "北京",
+      "org_type": "央企",
+      "industry": "国防军工",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "航天一院是航天科技集团第一研究院，建议通过航天科技集团人才招聘平台和航天一院官网持续关注火箭总体、动力、结构、制导控制、可靠性等方向。",
+      "updated": "2026-08-27",
+      "deadline": "",
+      "score": 99,
+      "source_name": "官方招聘入口/公开公告",
+      "url": "https://www.calt.com/",
+      "apply_url": "https://spacechina.iguopin.com/job-campus",
+      "tags": [
+        "航天科技",
+        "航天一院",
+        "火箭",
+        "2027",
+        "硕士",
+        "博士",
+        "动力工程",
+        "结构",
+        "控制"
+      ]
+    },
+    {
+      "id": "8cbbe016ce9c6347",
       "company": "中国航空发动机集团有限公司",
       "title": "中国航空发动机集团有限公司2027届校园招聘重磅开启",
       "location": "北京/全国",
       "org_type": "央企",
       "industry": "航空航天",
       "degree": "本科/硕士/博士",
-      "major": "航空发动机、动力工程、机械、材料、控制等（具体岗位以官方招聘平台为准）",
+      "major": "",
       "summary": "中国航发2027届校园招聘已于2026年7月30日正式发布，重点关注航空发动机、燃气轮机、动力工程、机械、材料及研发类岗位。",
       "updated": "2026-07-30",
       "deadline": "",
       "score": 99,
-      "source_name": "中国航发官网",
+      "source_name": "官方招聘入口/公开公告",
       "url": "https://www.aecc.cn/aecc/gggs/2026073017062513709/index.html",
       "apply_url": "https://aecc.iguopin.com/",
       "tags": [
@@ -63,7 +262,8 @@
         "机械",
         "科研",
         "结构",
-        "控制"
+        "控制",
+        "制导"
       ]
     },
     {
@@ -90,7 +290,31 @@
         "机械",
         "航空航天",
         "科研",
-        "控制"
+        "控制",
+        "电气"
+      ]
+    },
+    {
+      "id": "0ddad6f1afdb7a8f",
+      "company": "中国科学院空间应用工程与技术中心",
+      "title": "中国科学院空间应用工程与技术中心2027届校园招聘启事",
+      "location": "北京",
+      "org_type": "科研院所",
+      "industry": "航空航天",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "招聘岗位、职责及任职条件 详见附件 1 《空间应用中心 2027 届校园招聘岗位需求》。 二、应聘流程 1. 自启事发布之日起至 2026 年 12 月 31 日，凡符合应聘条件的人员均可报名， 招满即止 。 2. 简历投递： 应聘者点击中心招聘平台链接 https://csu.zhiye.com/AllJob ，选择相应岗位投递，投递时请填写附件 2 《空间应用中心博士后申请审核表》、《空间应用中心聘用审核表》、《空间应用中心人才引进候选人登记表》，并根据附件 3 《空间应用中心公开招聘人员资格条件审核材料规范》",
+      "updated": "2026-04-21",
+      "deadline": "",
+      "score": 99,
+      "source_name": "中国科学院空间应用工程与技术中心官网",
+      "url": "https://csu.cas.cn/gb/yjdw/rczp/202604/t20260421_8188165.html",
+      "apply_url": "https://csu.zhiye.com/AllJob",
+      "tags": [
+        "博士",
+        "2027",
+        "控制",
+        "总体"
       ]
     },
     {
@@ -147,7 +371,8 @@
         "机械",
         "航空航天",
         "科研",
-        "控制"
+        "控制",
+        "气动"
       ]
     },
     {
@@ -209,6 +434,29 @@
       ]
     },
     {
+      "id": "61c29a9d1b6fbd93",
+      "company": "中国科学院空间应用工程与技术中心",
+      "title": "中国科学院空间应用工程与技术中心质量标准处公开招聘启事",
+      "location": "北京",
+      "org_type": "科研院所",
+      "industry": "机械装备",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "招聘岗位、职责及任职条件 GJB5000 体系管理及横向质量主管 1 名 （一）岗位职责 1. 负责 GJB5000 体系的维护与运行管理，组织内审、外审及认证迎审工作，统筹体系文件的制修订与受控管理； 2. 负责体系运行的绩效监控与数据分析，推动质量改进闭环，组织相关培训及人员资格管理； 3. 负责横向产品研制全过程质量管控，统筹检验与标审人员资质及印章管理，确保各阶段质量合规； 4. 负责产品质量数据与质量信息的收集分析与报送管理，策划并组织科研产品质量提升专项活动； 5. 完成领导交办的其他事项。 （二）任职",
+      "updated": "2026-07-15",
+      "deadline": "",
+      "score": 94,
+      "source_name": "中国科学院空间应用工程与技术中心官网",
+      "url": "https://csu.cas.cn/gb/yjdw/rczp/202607/t20260715_8247666.html",
+      "apply_url": "https://csu.zhiye.com/AllJob",
+      "tags": [
+        "可靠性",
+        "科研",
+        "控制",
+        "总体"
+      ]
+    },
+    {
       "id": "334e1deed75be0de",
       "company": "中国科学院力学研究所",
       "title": "深部资源与环境力学研究团队特别研究助理招聘启事",
@@ -228,6 +476,264 @@
         "博士",
         "应届",
         "流体"
+      ]
+    },
+    {
+      "id": "37b7e80b5b3a8af7",
+      "company": "中国科学院空间应用工程与技术中心",
+      "title": "中国科学院空间应用工程与技术中心科学与应用数据中心公开招聘启事",
+      "location": "北京",
+      "org_type": "科研院所",
+      "industry": "航空航天",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "招聘岗位、职责及任职条件 详见附件 1 《空间应用中心科学与应用数据中心岗位招聘需求》。 二、应聘流程 1. 自启事发布之日起至 2026 年 12 月 31 日，凡符合应聘条件的人员均可报名， 招满即止 。 2. 简历投递： 应聘者点击中心招聘平台链接 https://csu.zhiye.com/AllJob ，选择相应岗位投递，投递时请填写附件 1 《空间应用中心聘用审核表》，并根据附件 2 《空间应用中心公开招聘人员资格条件审核材料规范》提供相关证明材料。 所有应聘材料不得涉密。 3. 中心将根据招聘条件对应",
+      "updated": "2026-07-29",
+      "deadline": "",
+      "score": 93,
+      "source_name": "中国科学院空间应用工程与技术中心官网",
+      "url": "https://csu.cas.cn/gb/yjdw/rczp/202607/t20260729_8256756.html",
+      "apply_url": "https://csu.zhiye.com/AllJob",
+      "tags": [
+        "控制",
+        "总体"
+      ]
+    },
+    {
+      "id": "2819dd9b830be5ca",
+      "company": "中国科学院空间应用工程与技术中心",
+      "title": "中国科学院空间应用工程与技术中心科技处科技成果管理岗位公开招聘启事",
+      "location": "北京",
+      "org_type": "科研院所",
+      "industry": "航空航天",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "招聘岗位、职责及任职条件 科技成果管理岗位（六级职员） 1 名 （一）岗位职责 1. 负责编制中心科技成果中长期发展规划，建立健全覆盖成果申报、知识产权保护、科技成果评价、科技奖励管理、成果转移转化及收益分配激励的全链条制度体系，并推动相关政策的宣贯与落实。 2. 统筹组织各级各类科技奖励的策划、培育、申报与全过程服务保障；负责专利、软件著作权、高水平学术论文、奖励科技成果的登记、审核、归档及数据统计与信息公开工作。 3. 负责组织中心各领域科技专家的遴选、推荐、报送及动态维护工作（含各级各类专家库入库、项目评审专",
+      "updated": "2026-07-15",
+      "deadline": "",
+      "score": 92,
+      "source_name": "中国科学院空间应用工程与技术中心官网",
+      "url": "https://csu.cas.cn/gb/yjdw/rczp/202607/t20260715_8249124.html",
+      "apply_url": "https://csu.zhiye.com/AllJob",
+      "tags": [
+        "科研",
+        "控制",
+        "总体"
+      ]
+    },
+    {
+      "id": "d50235bc66578199",
+      "company": "中国科学院空间应用工程与技术中心",
+      "title": "中国科学院空间应用工程与技术中心新增岗位公开招聘启事",
+      "location": "北京",
+      "org_type": "科研院所",
+      "industry": "航空航天",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "招聘岗位、职责及任职条件 详见附件 1 《空间应用中心 2026 年新增招聘需求》。 二、应聘流程 1. 自启事发布之日起至 2026 年 12 月 31 日，凡符合应聘条件的人员均可报名， 招满即止 。 2. 简历投递： 应聘者点击中心招聘平台链接 https://csu.zhiye.com/AllJob ，选择相应岗位投递，投递时请填写附件 2 《空间应用中心聘用审核表》，并根据附件 3 《空间应用中心公开招聘人员资格条件审核材料规范》提供相关证明材料。 所有应聘材料不得涉密。 3. 中心将根据招聘条件对应聘人",
+      "updated": "2026-06-25",
+      "deadline": "",
+      "score": 90,
+      "source_name": "中国科学院空间应用工程与技术中心官网",
+      "url": "https://csu.cas.cn/gb/yjdw/rczp/202606/t20260625_8233817.html",
+      "apply_url": "https://csu.zhiye.com/AllJob",
+      "tags": [
+        "控制",
+        "总体"
+      ]
+    },
+    {
+      "id": "8dfac60c39b402f8",
+      "company": "中国科学院空间应用工程与技术中心",
+      "title": "中国科学院空间应用工程与技术中心研究生部教育主管岗位公开招聘启事",
+      "location": "北京",
+      "org_type": "科研院所",
+      "industry": "航空航天",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "招聘岗位、职责及任职条件 教育主管 1名 （一）岗位职责 1. 负责导师及辅导员队伍建设； 2 . 负责研究生培养、档案及日常管理等相关工作； 3 . 负责对外宣传及信息化工作； 4 . 协助招生、科教融合相关工作及完成领导交办的其他工作。 （二）任职条件 1. 学历学位：研究生学历、硕士及以上学位 ; 2. 专业方向：理工科相关专业 3. 技能和经验 （ 1 ）具有教育相关工作经历或读书期间担任主要学生干部 1 年及以上； （ 2 ）熟悉研究生教育相关的法律法规和政策，掌握履行岗位职责所需的业务知识和方法，具有较",
+      "updated": "2026-06-05",
+      "deadline": "",
+      "score": 90,
+      "source_name": "中国科学院空间应用工程与技术中心官网",
+      "url": "https://csu.cas.cn/gb/yjdw/rczp/202606/t20260605_8216006.html",
+      "apply_url": "https://csu.zhiye.com/AllJob",
+      "tags": [
+        "控制",
+        "总体"
+      ]
+    },
+    {
+      "id": "291cd1af12b88b48",
+      "company": "中国科学院空间应用工程与技术中心",
+      "title": "中国科学院空间应用工程与技术中心DRO专项总体室、数字工程中心、有效载荷运控中心、软件工程中心、运营规划中心公开招聘启事",
+      "location": "北京",
+      "org_type": "科研院所",
+      "industry": "航空航天",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "招聘岗位、职责及任职条件 详见附件 1 《 空间应用中心 2026 年 DRO 专项总体室、数字工程中心、有效载荷运控中心、软件工程中心、运营规划中心岗位招聘需求 》 。 二、应聘流程 1. 自启事发布之日起至 2026 年 12 月 31 日，凡符合应聘条件的人员均可报名， 招满即止 。 2. 简历投递： 应聘者点击中心招聘平台链接 https://csu.zhiye.com/AllJob ，选择相应岗位投递，投递时请填写附件 2 《空间应用中心聘用审核表》，并根据附件 3 《空间应用中心公开招聘人员资格条件审核",
+      "updated": "2026-06-05",
+      "deadline": "",
+      "score": 90,
+      "source_name": "中国科学院空间应用工程与技术中心官网",
+      "url": "https://csu.cas.cn/gb/yjdw/rczp/202606/t20260605_8215965.html",
+      "apply_url": "https://csu.zhiye.com/AllJob",
+      "tags": [
+        "控制",
+        "总体"
+      ]
+    },
+    {
+      "id": "2893445941b65ec5",
+      "company": "中国科学院空间应用工程与技术中心",
+      "title": "中国科学院空间应用工程与技术中心2026年高层次人才招聘启事",
+      "location": "北京",
+      "org_type": "科研院所",
+      "industry": "航空航天",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "招聘岗位、职责及任职条件 1. 应聘学术技术带头人应具有在国内外知名科研机构、高校或创新型企业等担任教授或相当岗位的科研工作经历， 年龄不超过 50 周岁（截至申报年度 1 月 1 日）。 2. 应聘学术技术骨干应具有取得博士学位后在国内外知名科研机构、高校或创新型企业等连续不少于 3 年（含）的担任副教授或相当岗位的科研工作经历，年龄不超过 40 周岁（截至申报年度 1 月 1 日）。 3. 特别优秀的，可适当放宽学历学位、年龄、工作年限要求。 具体招聘岗位、职责及任职条件详见附件 1 《空间应用中心 2026 ",
+      "updated": "2026-05-08",
+      "deadline": "",
+      "score": 89,
+      "source_name": "中国科学院空间应用工程与技术中心官网",
+      "url": "https://csu.cas.cn/gb/yjdw/rczp/202605/t20260508_8197671.html",
+      "apply_url": "https://csu.zhiye.com/AllJob",
+      "tags": [
+        "博士",
+        "科研",
+        "总体"
+      ]
+    },
+    {
+      "id": "ee96b7629c3fe26d",
+      "company": "中国科学院空间应用工程与技术中心",
+      "title": "中国科学院空间应用工程与技术中心系统总体室、电子信息技术研究室、可靠性保障中心、工程信息中心公开招聘启事",
+      "location": "北京",
+      "org_type": "科研院所",
+      "industry": "航空航天",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "招聘岗位、职责及任职条件 详见附件 1 《空间应用中心 2026 年系统总体室、电子信息技术研究室、可靠性保障中心、工程信息中心岗位招聘需求》。 二、应聘流程 1. 自启事发布之日起至 2026 年 12 月 31 日，凡符合应聘条件的人员均可报名， 招满即止 。 2. 简历投递： 应聘者点击中心招聘平台链接 https://csu.zhiye.com/AllJob ，选择相应岗位投递，投递时请填写附件 2 《空间应用中心聘用审核表》，并根据附件 3 《空间应用中心公开招聘人员资格条件审核材料规范》提供相关证明材料",
+      "updated": "2026-04-21",
+      "deadline": "",
+      "score": 89,
+      "source_name": "中国科学院空间应用工程与技术中心官网",
+      "url": "https://csu.cas.cn/gb/yjdw/rczp/202604/t20260421_8188163.html",
+      "apply_url": "https://csu.zhiye.com/AllJob",
+      "tags": [
+        "可靠性",
+        "控制",
+        "总体"
+      ]
+    },
+    {
+      "id": "79deca0b00698e9a",
+      "company": "中国科学院空间应用工程与技术中心",
+      "title": "中国科学院空间应用工程与技术中心人事人才处业务主管岗位公开招聘启事",
+      "location": "北京",
+      "org_type": "科研院所",
+      "industry": "航空航天",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "招聘岗位、职责及任职条件 业务主管 1 名 （一）岗位职责 1. 负责高层次人才引进、各类人员招聘和岗位管理工作； 2. 负责特别研究助理、博士后等人员管理工作； 3. 负责人事文书档案管理及领导交办的其他工作。 （二）任职条件 1. 政治素质：中共党员，具有较高的思想政治素质、良好的品行修养、较强的事业心和责任感，服从工作安排，组织纪律性强。 2. 学历学位：研究生学历，硕士及以上学位。 3. 专业方向：管理科学与工程类、理工类相关专业，或中心主要学科领域相关专业。 4. 技能和经验： （ 1 ）具有企事业单位 ",
+      "updated": "2026-04-09",
+      "deadline": "",
+      "score": 89,
+      "source_name": "中国科学院空间应用工程与技术中心官网",
+      "url": "https://csu.cas.cn/gb/yjdw/rczp/202604/t20260409_8183485.html",
+      "apply_url": "https://csu.zhiye.com/AllJob",
+      "tags": [
+        "博士",
+        "控制",
+        "总体"
+      ]
+    },
+    {
+      "id": "46e202c151246ad2",
+      "company": "中国科学院空间应用工程与技术中心",
+      "title": "中国科学院空间应用工程与技术中心2026年一般科研岗位公开招聘启事",
+      "location": "北京",
+      "org_type": "科研院所",
+      "industry": "航空航天",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "招聘岗位、职责及任职条件 详见附件 1 《 空间应用中心 2026 年一般科研岗位 招聘需求 》 。 二、应聘流程 1. 自启事发布之日起至 2026 年 12 月 31 日，凡符合应聘条件的人员均可报名 ， 招满即止 。 2. 简历投递： 外部 应聘者 点击中心招聘平台链接 https://csu.zhiye.com/AllJob ，选择相应岗位投递，投递时请填写附件 2 《空间应用中心聘用审核表》，并根据附件 3 《空间应用中心公开招聘人员资格条件审核材料规范》提供相关证明材料。 所有应聘材料不得涉及国家秘密、",
+      "updated": "2026-03-18",
+      "deadline": "",
+      "score": 89,
+      "source_name": "中国科学院空间应用工程与技术中心官网",
+      "url": "https://csu.cas.cn/gb/yjdw/rczp/202603/t20260318_8161401.html",
+      "apply_url": "https://csu.zhiye.com/AllJob",
+      "tags": [
+        "科研",
+        "控制",
+        "总体"
+      ]
+    },
+    {
+      "id": "f7969e59ddf73401",
+      "company": "中国科学院空间应用工程与技术中心",
+      "title": "中国科学院空间应用工程与技术中心空间实验技术研究室公开招聘启事",
+      "location": "北京",
+      "org_type": "科研院所",
+      "industry": "航空航天",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "招聘岗位、职责及任职条件 详见附件 1 《空间应用中心 2026 年空间实验技术研究室岗位招聘需求》。 二、应聘流程 1. 自启事发布之日起至 2026 年 12 月 31 日，凡符合应聘条件的人员均可报名， 招满即止 。 2. 简历投递： 应聘者点击中心招聘平台链接 https://csu.zhiye.com/AllJob ，选择相应岗位投递，投递时请填写附件 2 《空间应用中心聘用审核表》，并根据附件 3 《空间应用中心公开招聘人员资格条件审核材料规范》提供相关证明材料。 所有应聘材料不得涉密。 3. 中心将根",
+      "updated": "2026-04-17",
+      "deadline": "",
+      "score": 87,
+      "source_name": "中国科学院空间应用工程与技术中心官网",
+      "url": "https://csu.cas.cn/gb/yjdw/rczp/202604/t20260417_8187013.html",
+      "apply_url": "https://csu.zhiye.com/AllJob",
+      "tags": [
+        "控制",
+        "总体"
+      ]
+    },
+    {
+      "id": "8e6de2330a7802d6",
+      "company": "中国科学院空间应用工程与技术中心",
+      "title": "中国科学院空间应用工程与技术中心项目管理岗位、质量管理和综合主管岗位公开招聘启事",
+      "location": "北京",
+      "org_type": "科研院所",
+      "industry": "航空航天",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "招聘岗位、职责及任职条件 详见附件 1 《空间应用中心 2026 年项目管理岗位、质量管理和综合主管岗位招聘需求》。 二、应聘流程 1. 自启事发布之日起至 2026 年 12 月 31 日，凡符合应聘条件的人员均可报名， 招满即止 。 2. 简历投递： 应聘者点击中心招聘平台链接 https://csu.zhiye.com/AllJob ，选择相应岗位投递，投递时请填写附件 2 《空间应用中心聘用审核表》，并根据附件 3 《空间应用中心公开招聘人员资格条件审核材料规范》提供相关证明材料。 所有应聘材料不得涉密。 ",
+      "updated": "2026-04-16",
+      "deadline": "",
+      "score": 87,
+      "source_name": "中国科学院空间应用工程与技术中心官网",
+      "url": "https://csu.cas.cn/gb/yjdw/rczp/202604/t20260416_8186695.html",
+      "apply_url": "https://csu.zhiye.com/AllJob",
+      "tags": [
+        "控制",
+        "总体"
+      ]
+    },
+    {
+      "id": "c35f2247ffcbf3fb",
+      "company": "中国科学院力学研究所",
+      "title": "力学研究所某专项团队支撑岗位和特别研究助理岗位招聘启事",
+      "location": "北京",
+      "org_type": "科研院所",
+      "industry": "航空航天",
+      "degree": "硕士及以上",
+      "major": "",
+      "summary": "岗位职责 1、支撑岗位 1 ） 熟练掌握至少一种激光测试技术（如激光诱导荧光（ LIF ）、相干反斯托克斯拉曼散射（ CARS ）、瑞利散射（ RS ）、汤姆逊散射（ TS ）、超快飞秒激光技术（ FLEET ）等）；熟练使用至少一种编程语言（如 Python 、 Matlab 、 C++ 等）进行数据处理； 2 ） 辅助研究人员开展实验，参与科研项目的实验设计、数据采集与分析； 3 ） 负责纳秒激光器和飞秒激光器设备操作和日常维护； 4 ） 撰写技术报告、科研论文及相关管理文档； 5 ） 与团队成员协作，完成项目",
+      "updated": "2026-07-07",
+      "deadline": "",
+      "score": 74,
+      "source_name": "中国科学院力学研究所官网",
+      "url": "https://imech.cas.cn/zpxx/202607/t20260707_8242653.html",
+      "apply_url": "https://imech.cas.cn/zpxx/202607/t20260707_8242653.html",
+      "tags": [
+        "博士",
+        "科研",
+        "气动"
       ]
     },
     {
@@ -253,27 +759,6 @@
       ]
     },
     {
-      "id": "c35f2247ffcbf3fb",
-      "company": "中国科学院力学研究所",
-      "title": "力学研究所某专项团队支撑岗位和特别研究助理岗位招聘启事",
-      "location": "北京",
-      "org_type": "科研院所",
-      "industry": "航空航天",
-      "degree": "硕士及以上",
-      "major": "",
-      "summary": "岗位职责 1、支撑岗位 1 ） 熟练掌握至少一种激光测试技术（如激光诱导荧光（ LIF ）、相干反斯托克斯拉曼散射（ CARS ）、瑞利散射（ RS ）、汤姆逊散射（ TS ）、超快飞秒激光技术（ FLEET ）等）；熟练使用至少一种编程语言（如 Python 、 Matlab 、 C++ 等）进行数据处理； 2 ） 辅助研究人员开展实验，参与科研项目的实验设计、数据采集与分析； 3 ） 负责纳秒激光器和飞秒激光器设备操作和日常维护； 4 ） 撰写技术报告、科研论文及相关管理文档； 5 ） 与团队成员协作，完成项目",
-      "updated": "2026-07-07",
-      "deadline": "",
-      "score": 72,
-      "source_name": "中国科学院力学研究所官网",
-      "url": "https://imech.cas.cn/zpxx/202607/t20260707_8242653.html",
-      "apply_url": "https://imech.cas.cn/zpxx/202607/t20260707_8242653.html",
-      "tags": [
-        "博士",
-        "科研"
-      ]
-    },
-    {
       "id": "fc6da411720cfa00",
       "company": "中国科学院力学研究所",
       "title": "先进材料的跨尺度力学行为课题组实验室技术支撑岗位人员招聘启事",
@@ -285,36 +770,15 @@
       "summary": "招聘岗位 实验室技术支撑岗 二、岗位职责 1 、负责力学类试验测试、工装及传感器准备、设备使用与维护； 2 、负责工装卡具类装置的搭建及调试； 3 、参与试验装置相关系统的设计、集成及优化，包括结构、电气控制及水 / 电 / 气供给等； 4 、按规定进行数据整理、报告及相关文档填写； 5 、完成课题组交代的其他工作。 三、应聘要求 1 、男性，本科及以上学历，年龄不超过 33 周岁；品行端正，有责任心，具备良好的学习和沟通能力； 2 、动手能力强，能够参与设备装配、调试及现场问题处理； 3 、具备机械 / 电气 /",
       "updated": "2026-04-29",
       "deadline": "",
-      "score": 71,
+      "score": 73,
       "source_name": "中国科学院力学研究所官网",
       "url": "https://imech.cas.cn/zpxx/202604/t20260429_8194620.html",
       "apply_url": "https://imech.cas.cn/zpxx/202604/t20260429_8194620.html",
       "tags": [
         "机械",
         "结构",
-        "控制"
-      ]
-    },
-    {
-      "id": "ee94a4da58bd989c",
-      "company": "中国机械科学研究总院集团有限公司",
-      "title": "中国机械科学研究总院集团有限公司总部社会招聘公告",
-      "location": "北京",
-      "org_type": "央企",
-      "industry": "机械装备",
-      "degree": "学历见公告",
-      "major": "",
-      "summary": "招聘岗位公告如下： 一、招聘岗位 1.院务工作部：网络管理岗 1名 2.科技发展部：科技创新能力管理岗 1名 二、基本条件 1.拥护中国共产党领导和社会主义制度，拥护党和国家的路线、方针、政策，遵纪守法，诚实守信； 2.事业心、责任感强，有良好的职业操守，自觉遵守保密要求和廉洁从业规定； 3.具有良好的政治素质和道德品行； 4.认同中国机械总院的企业文化及核心价值观； 5.具有正常履行职责的身体条件和心理素质。 三、岗位职责及任职资格 （一）院务工作部 网络管理岗 1.岗位职责： （ 1）负责数据中心及云平台的规划",
-      "updated": "2025-12-26",
-      "deadline": "",
-      "score": 71,
-      "source_name": "中国机械科学研究总院集团有限公司官网",
-      "url": "https://www.cam.com.cn/contents/640/18825.html",
-      "apply_url": "https://camzhaopin.zhiye.com/custom/index",
-      "tags": [
-        "机械",
-        "科研",
-        "研发"
+        "控制",
+        "电气"
       ]
     },
     {
@@ -340,6 +804,109 @@
         "科研",
         "研发",
         "控制"
+      ]
+    },
+    {
+      "id": "ad9347e490f1f71c",
+      "company": "惠阳航空螺旋桨有限责任公司",
+      "title": "气动设计员",
+      "location": "保定",
+      "org_type": "央企/国企",
+      "industry": "航空航天",
+      "degree": "学历见公告",
+      "major": "",
+      "summary": "惠阳航空螺旋桨有限责任公司 气动设计员 校园招聘 研发设计类 河北省-保定 发布时间：2026-07-15",
+      "updated": "2026-07-15",
+      "deadline": "",
+      "score": 45,
+      "source_name": "军工人才网校招职位",
+      "url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fd93cf856c3f733f7d3e&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
+      "apply_url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fd93cf856c3f733f7d3e&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
+      "tags": [
+        "研发",
+        "气动"
+      ]
+    },
+    {
+      "id": "0f108b1609bcd322",
+      "company": "惠阳航空螺旋桨有限责任公司",
+      "title": "复材结构设计员",
+      "location": "保定",
+      "org_type": "央企/国企",
+      "industry": "航空航天",
+      "degree": "学历见公告",
+      "major": "",
+      "summary": "惠阳航空螺旋桨有限责任公司 复材结构设计员 校园招聘 研发设计类 河北省-保定 发布时间：2026-07-15",
+      "updated": "2026-07-15",
+      "deadline": "",
+      "score": 45,
+      "source_name": "军工人才网校招职位",
+      "url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fe32cf856c3f733f7d43&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
+      "apply_url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fe32cf856c3f733f7d43&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
+      "tags": [
+        "研发",
+        "结构"
+      ]
+    },
+    {
+      "id": "abaeff5461550975",
+      "company": "惠阳航空螺旋桨有限责任公司",
+      "title": "系统总体设计员",
+      "location": "保定",
+      "org_type": "央企/国企",
+      "industry": "航空航天",
+      "degree": "学历见公告",
+      "major": "",
+      "summary": "惠阳航空螺旋桨有限责任公司 系统总体设计员 校园招聘 研发设计类 河北省-保定 发布时间：2026-07-15",
+      "updated": "2026-07-15",
+      "deadline": "",
+      "score": 45,
+      "source_name": "军工人才网校招职位",
+      "url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fe92cf856c3f733f7d44&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
+      "apply_url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fe92cf856c3f733f7d44&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
+      "tags": [
+        "研发",
+        "总体"
+      ]
+    },
+    {
+      "id": "9b16d7af1144ccb5",
+      "company": "惠阳航空螺旋桨有限责任公司",
+      "title": "系统工程设计员",
+      "location": "保定",
+      "org_type": "央企/国企",
+      "industry": "航空航天",
+      "degree": "学历见公告",
+      "major": "",
+      "summary": "惠阳航空螺旋桨有限责任公司 系统工程设计员 校园招聘 研发设计类 河北省-保定 发布时间：2026-07-15",
+      "updated": "2026-07-15",
+      "deadline": "",
+      "score": 43,
+      "source_name": "军工人才网校招职位",
+      "url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fcdecf856c3f733f7d39&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
+      "apply_url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fcdecf856c3f733f7d39&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
+      "tags": [
+        "研发"
+      ]
+    },
+    {
+      "id": "438b6705f64ebb6c",
+      "company": "惠阳航空螺旋桨有限责任公司",
+      "title": "适航设计员",
+      "location": "保定",
+      "org_type": "央企/国企",
+      "industry": "航空航天",
+      "degree": "学历见公告",
+      "major": "",
+      "summary": "惠阳航空螺旋桨有限责任公司 适航设计员 校园招聘 研发设计类 河北省-保定 发布时间：2026-07-15",
+      "updated": "2026-07-15",
+      "deadline": "",
+      "score": 43,
+      "source_name": "军工人才网校招职位",
+      "url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fcaacf856c3f733f7d37&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
+      "apply_url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fcaacf856c3f733f7d37&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
+      "tags": [
+        "研发"
       ]
     }
   ]

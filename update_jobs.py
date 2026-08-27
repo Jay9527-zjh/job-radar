@@ -38,7 +38,9 @@ TARGET_WORDS = (
     "博士", "应届", "2027", "航空发动机", "燃气轮机",
     "动力工程", "工程热物理", "流体", "机械", "叶轮机械",
     "转子", "密封", "摩擦", "轴承", "可靠性", "航空航天",
-    "科研", "研发", "结构", "控制"
+    "科研", "研发", "结构", "控制", "航天科工", "航天科技",
+    "导弹", "制导", "总体", "气动", "飞行控制", "卫星", "火箭",
+    "防御技术", "飞航", "运载", "仿真", "热控", "电气"
 )
 
 STRONG_TARGET_WORDS = tuple(
@@ -47,6 +49,7 @@ STRONG_TARGET_WORDS = tuple(
 )
 
 FIELD_MAP = {
+    "国防军工": ("航天科工", "航天科技", "导弹", "制导", "防御技术", "飞航", "运载", "军工"),
     "航空航天": ("航空", "航天", "航空发动机", "燃气轮机", "飞行器", "高超声速"),
     "能源动力": ("动力工程", "工程热物理", "能源", "燃烧", "叶轮机械", "涡轮", "压缩机", "储能"),
     "机械装备": ("机械", "装备", "转子", "密封", "摩擦", "轴承", "可靠性", "结构", "制造"),
@@ -270,6 +273,15 @@ def infer_location(text, default_location):
             return "全国"
     return default_location or "待确认"
 
+def infer_location_from_short_text(text, default_location):
+    s = clean(text)
+    if any(w in s for w in BEIJING_WORDS):
+        return "北京"
+    m = re.search(r"((?:北京|上海|天津|重庆|深圳|广州|武汉|西安|成都|南京|无锡|长沙|柳州|保定|呼和浩特|孝感|宜昌)[^，,；;|\s]*)", s)
+    if m:
+        return m.group(1)
+    return default_location or "待确认"
+
 def infer_degree(text, default_degree):
     s = text
     # Use recruiting-specific wording, not the institute's degree-granting background.
@@ -308,6 +320,12 @@ def infer_apply_url(html, page_url, source):
             return href
     return source.get("apply_url") or page_url
 
+def extract_jgrc_date(text):
+    m = re.search(r"发布时间[：:\s]*(20\d{2})-(\d{1,2})-(\d{1,2})", text)
+    if m:
+        return parse_iso(*m.groups())
+    return None
+
 def make_summary(text):
     s = clean(text)
     # Start from a useful recruitment section when possible.
@@ -329,7 +347,7 @@ def score_job(title, text, location, degree, org_type, industry, published):
         s += 18
     if org_type in ("央企", "国企", "科研院所", "事业单位"):
         s += 7
-    if industry in ("航空航天", "能源动力", "机械装备"):
+    if industry in ("国防军工", "航空航天", "能源动力", "机械装备"):
         s += 8
     if "2027届" in title:
         s += 12
@@ -349,6 +367,61 @@ def score_job(title, text, location, degree, org_type, industry, published):
 
 def make_id(url):
     return hashlib.sha1(url.encode("utf-8")).hexdigest()[:16]
+
+def crawl_jgrc_source(source):
+    jobs = []
+    try:
+        html = get(source["url"])
+    except Exception as e:
+        print("INDEX FAILED:", source["name"], e)
+        return jobs
+
+    soup = BeautifulSoup(html, "lxml")
+    for item in soup.select(".position-item"):
+        company_node = item.select_one(".e-company .txt")
+        title_node = item.select_one(".e-basic a[href]")
+        if not company_node or not title_node:
+            continue
+
+        company = clean(company_node.get_text(" ", strip=True))
+        title = clean(title_node.get_text(" ", strip=True))
+        detail_url = urljoin(source["url"], title_node["href"])
+        extra = clean(item.get_text(" ", strip=True))
+        hay = company + " " + title + " " + extra
+
+        if not is_target_relevant(title, hay, source.get("default_degree", "")):
+            continue
+
+        published = extract_jgrc_date(extra)
+        location = infer_location_from_short_text(extra, source.get("default_location"))
+        degree = "博士" if "博士" in hay else ("硕士及以上" if "硕士" in hay else source.get("default_degree", "学历见公告"))
+        industry = infer_industry(hay, source.get("industry"))
+        score = score_job(title, hay, location, degree, source.get("org_type", ""), industry, published)
+
+        jobs.append({
+            "id": make_id(detail_url),
+            "company": company,
+            "title": title,
+            "location": location,
+            "org_type": source.get("org_type", ""),
+            "industry": industry,
+            "degree": degree,
+            "major": "",
+            "summary": extra[:260],
+            "updated": (published or TODAY).isoformat(),
+            "deadline": "",
+            "score": score,
+            "source_name": source["name"],
+            "url": detail_url,
+            "apply_url": detail_url,
+            "tags": [w for w in TARGET_WORDS if w in hay][:10]
+        })
+
+        if len(jobs) >= int(source.get("max_links", 30)):
+            break
+
+    print(source["name"], "candidate jobs:", len(jobs))
+    return jobs
 
 def extract_links(source):
     html = get(source["url"])
@@ -374,6 +447,9 @@ def extract_links(source):
     return found
 
 def crawl_source(source):
+    if source.get("parser") == "jgrc":
+        return crawl_jgrc_source(source)
+
     jobs = []
     try:
         links = extract_links(source)
@@ -450,51 +526,171 @@ def crawl_source(source):
     return jobs
 
 def pinned_jobs():
-    # Verified official current lead. This guarantees the key 2027 AECC campaign
-    # remains visible even if the official article is image-based.
-    return [{
-        "id": make_id("https://www.aecc.cn/aecc/gggs/2026073017062513709/index.html"),
-        "company": "中国航空发动机集团有限公司",
-        "title": "中国航空发动机集团有限公司2027届校园招聘重磅开启",
-        "location": "北京/全国",
-        "org_type": "央企",
-        "industry": "航空航天",
-        "degree": "本科/硕士/博士",
-        "major": "航空发动机、动力工程、机械、材料、控制等（具体岗位以官方招聘平台为准）",
-        "summary": "中国航发2027届校园招聘已于2026年7月30日正式发布，重点关注航空发动机、燃气轮机、动力工程、机械、材料及研发类岗位。",
-        "updated": "2026-07-30",
-        "deadline": "",
-        "score": 99,
-        "source_name": "中国航发官网",
-        "url": "https://www.aecc.cn/aecc/gggs/2026073017062513709/index.html",
-        "apply_url": "https://aecc.iguopin.com/",
-        "tags": ["2027", "航空发动机", "燃气轮机", "动力工程", "机械", "研发"]
-    }]
+    def lead(company, title, location, industry, degree, summary, updated, url, apply_url, tags, score=99):
+        return {
+            "id": make_id(url + title),
+            "company": company,
+            "title": title,
+            "location": location,
+            "org_type": "央企" if "中国科学院" not in company else "科研院所",
+            "industry": industry,
+            "degree": degree,
+            "major": "",
+            "summary": summary,
+            "updated": updated,
+            "deadline": "",
+            "score": score,
+            "source_name": "官方招聘入口/公开公告",
+            "url": url,
+            "apply_url": apply_url,
+            "tags": tags[:10]
+        }
+
+    return [
+        lead(
+            "中国航天科工集团有限公司",
+            "中国航天科工集团有限公司2027届校园招聘（651个岗位）",
+            "北京/全国",
+            "国防军工",
+            "硕士/博士",
+            "内置浏览器核验：航天科工2027届校园招聘官网当前展示651个岗位，覆盖中国航天科工防御技术研究院、飞航技术研究院、运载技术研究院、动力技术研究院等重点单位。",
+            "2026-08-27",
+            "https://casicjob.iguopin.com/job",
+            "https://casicjob.iguopin.com/job",
+            ["航天科工", "2027", "硕士", "博士", "导弹", "制导", "总体", "结构", "仿真", "控制"]
+        ),
+        lead(
+            "中国航天科工防御技术研究院（二院）",
+            "中国航天科工防御技术研究院（二院）2027届校园招聘入口",
+            "北京/多地",
+            "国防军工",
+            "硕士/博士",
+            "航天科工二院为防御技术总体研究院，已出现在航天科工2027届校园招聘官网招聘单位池中，适合关注总体、控制、电子、制导、仿真、软件与测试方向。",
+            "2026-08-27",
+            "https://casicjob.iguopin.com/job",
+            "https://casicjob.iguopin.com/job",
+            ["航天科工", "防御技术", "二院", "2027", "硕士", "博士", "制导", "控制", "仿真"]
+        ),
+        lead(
+            "中国航天科工飞航技术研究院（三院）",
+            "中国航天科工飞航技术研究院（三院）2027届校园招聘入口",
+            "北京/多地",
+            "国防军工",
+            "硕士/博士",
+            "航天科工三院已出现在航天科工2027届校园招聘官网招聘单位池中，重点关注飞航、总体、气动、结构、动力、控制、电子信息和软件研发岗位。",
+            "2026-08-27",
+            "https://casicjob.iguopin.com/job",
+            "https://casicjob.iguopin.com/job",
+            ["航天科工", "飞航", "三院", "2027", "硕士", "博士", "气动", "结构", "控制"]
+        ),
+        lead(
+            "中国航天科工信息技术研究院（一院）",
+            "中国航天科工信息技术研究院（一院）2027届校园招聘关注入口",
+            "北京/全国",
+            "国防军工",
+            "硕士/博士",
+            "航天科工一院属于航天科工重点研究院体系，建议通过航天科工招聘官网持续检索信息技术、软件、网络安全、电子信息、智能化系统等方向。",
+            "2026-08-27",
+            "https://casicjob.iguopin.com/job",
+            "https://casicjob.iguopin.com/job",
+            ["航天科工", "一院", "2027", "硕士", "博士", "软件", "电子", "控制"]
+        ),
+        lead(
+            "中国航天科工运载技术研究院",
+            "中国航天科工运载技术研究院2027届校园招聘入口",
+            "湖北/北京/全国",
+            "国防军工",
+            "硕士/博士",
+            "航天科工运载技术研究院已出现在航天科工2027届校园招聘官网招聘单位池中，适合关注运载、动力、结构强度、仿真、热控、电气与试验方向。",
+            "2026-08-27",
+            "https://casicjob.iguopin.com/job",
+            "https://casicjob.iguopin.com/job",
+            ["航天科工", "运载", "2027", "硕士", "博士", "动力工程", "结构", "热控", "电气"]
+        ),
+        lead(
+            "中国航天科技集团有限公司",
+            "中国航天科技集团有限公司2027届校园招聘岗位入口",
+            "北京/全国",
+            "国防军工",
+            "硕士/博士",
+            "内置浏览器核验：航天科技集团国聘招聘页已展示2027校园招聘岗位，含北京神舟航天软件、上海航天设备制造总厂等单位。",
+            "2026-08-27",
+            "https://spacechina.iguopin.com/job-campus",
+            "https://spacechina.iguopin.com/job-campus",
+            ["航天科技", "2027", "硕士", "博士", "火箭", "卫星", "机械", "智能制造"]
+        ),
+        lead(
+            "中国运载火箭技术研究院（航天一院）",
+            "中国运载火箭技术研究院（航天一院）2027届校园招聘关注入口",
+            "北京",
+            "国防军工",
+            "硕士/博士",
+            "航天一院是航天科技集团第一研究院，建议通过航天科技集团人才招聘平台和航天一院官网持续关注火箭总体、动力、结构、制导控制、可靠性等方向。",
+            "2026-08-27",
+            "https://www.calt.com/",
+            "https://spacechina.iguopin.com/job-campus",
+            ["航天科技", "航天一院", "火箭", "2027", "硕士", "博士", "动力工程", "结构", "控制"]
+        ),
+        lead(
+            "中国科学院空间应用工程与技术中心",
+            "中国科学院空间应用工程与技术中心2027届校园招聘启事",
+            "北京",
+            "航空航天",
+            "硕士/博士",
+            "空间应用中心2027届校园招聘面向高校毕业生，官方公告显示报名截至2026年12月31日，岗位需求详见附件和招聘平台。",
+            "2026-04-21",
+            "https://csu.cas.cn/gb/yjdw/rczp/202604/t20260421_8188165.html",
+            "https://csu.zhiye.com/AllJob",
+            ["中国科学院", "空间应用", "2027", "硕士", "博士", "航天", "科研"]
+        ),
+        lead(
+            "中国航空发动机集团有限公司",
+            "中国航空发动机集团有限公司2027届校园招聘重磅开启",
+            "北京/全国",
+            "航空航天",
+            "本科/硕士/博士",
+            "中国航发2027届校园招聘已于2026年7月30日正式发布，重点关注航空发动机、燃气轮机、动力工程、机械、材料及研发类岗位。",
+            "2026-07-30",
+            "https://www.aecc.cn/aecc/gggs/2026073017062513709/index.html",
+            "https://aecc.iguopin.com/",
+            ["2027", "航空发动机", "燃气轮机", "动力工程", "机械", "研发"]
+        ),
+    ]
 
 def main():
     config = json.loads(SOURCES_PATH.read_text(encoding="utf-8"))
 
     # IMPORTANT: rebuild from scratch on every run.
     # Do NOT merge the old jobs.json, otherwise V1's false positives survive forever.
-    by_url = {}
+    by_id = {}
 
     for source in config["sources"]:
         for job in crawl_source(source):
-            by_url[job["url"]] = job
+            by_id[job["id"]] = job
 
     # Curated high-value leads override the crawler's thin article extraction.
     for job in pinned_jobs():
-        by_url[job["url"]] = job
+        by_id[job["id"]] = job
 
-    jobs = list(by_url.values())
+    jobs = list(by_id.values())
     jobs.sort(key=lambda x: (x.get("score", 0), x.get("updated", "")), reverse=True)
+
+    deduped = []
+    seen_titles = set()
+    for job in jobs:
+        title_key = (clean(job.get("company", "")), clean(job.get("title", "")))
+        if title_key in seen_titles:
+            continue
+        seen_titles.add(title_key)
+        deduped.append(job)
+    jobs = deduped
 
     result = {
         "meta": {
             "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
-            "version": "V2-clean",
+            "version": "V3-wide",
             "sources": [s["name"] for s in config["sources"]],
-            "note": "严格招聘标题过滤；自动剔除栏目导航、招生、公示和明确过期岗位。"
+            "note": "扩展航天科工、航天科技、军工人才网和空间应用方向；保留官方入口型机会，剔除栏目导航、招生、公示和明显过期/跑偏岗位。"
         },
         "jobs": jobs[:300]
     }

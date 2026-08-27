@@ -1,6 +1,37 @@
 {
   "sources": [
     {
+      "name": "中国航天科工集团有限公司2027届校园招聘",
+      "url": "https://casicjob.iguopin.com/job",
+      "org_type": "央企",
+      "industry": "国防军工",
+      "default_location": "北京/全国",
+      "default_degree": "硕士/博士",
+      "apply_url": "https://casicjob.iguopin.com/job",
+      "max_links": 20
+    },
+    {
+      "name": "中国航天科技集团有限公司人才招聘",
+      "url": "https://spacechina.iguopin.com/job-campus",
+      "org_type": "央企",
+      "industry": "国防军工",
+      "default_location": "北京/全国",
+      "default_degree": "硕士/博士",
+      "apply_url": "https://spacechina.iguopin.com/job-campus",
+      "max_links": 20
+    },
+    {
+      "name": "军工人才网校招职位",
+      "url": "https://www.jgrc.cn/hrbj/position/index?recruitmentType=CAMPUSRECRUITMENT",
+      "parser": "jgrc",
+      "org_type": "央企/国企",
+      "industry": "国防军工",
+      "default_location": "全国",
+      "default_degree": "学历见公告",
+      "apply_url": "https://www.jgrc.cn/hrbj/position/index?recruitmentType=CAMPUSRECRUITMENT",
+      "max_links": 30
+    },
+    {
       "name": "中国航空发动机集团有限公司",
       "url": "https://www.aecc.cn/",
       "org_type": "央企",
@@ -9,6 +40,16 @@
       "default_degree": "学历见公告",
       "apply_url": "https://aecc.iguopin.com/",
       "max_links": 20
+    },
+    {
+      "name": "中国科学院空间应用工程与技术中心",
+      "url": "https://csu.cas.cn/gb/yjdw/rczp/",
+      "org_type": "科研院所",
+      "industry": "航空航天",
+      "default_location": "北京",
+      "default_degree": "硕士/博士",
+      "apply_url": "https://csu.zhiye.com/AllJob",
+      "max_links": 25
     },
     {
       "name": "中国科学院力学研究所",
