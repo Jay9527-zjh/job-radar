@@ -1,0 +1,22 @@
+{
+  "sources": [
+    {
+      "name": "国务院国资委招聘",
+      "url": "https://www.sasac.gov.cn/n2588035/n2588325/n2588350/index.html",
+      "org_type": "央企",
+      "industry": "综合"
+    },
+    {
+      "name": "中国科学院力学研究所",
+      "url": "https://imech.cas.cn/zpxx/",
+      "org_type": "科研院所",
+      "industry": "航空航天"
+    },
+    {
+      "name": "中国科学院工程热物理研究所",
+      "url": "https://iet.cas.cn/team/zp/",
+      "org_type": "科研院所",
+      "industry": "能源动力"
+    }
+  ]
+}

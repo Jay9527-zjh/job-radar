@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "updated_at": "2026-08-27",
+    "sources": [
+      "公开官方招聘页面"
+    ]
+  },
+  "jobs": [
+    {
+      "id": "seed-1",
+      "company": "中国航空发动机集团有限公司",
+      "title": "校园招聘 / 博士研发岗位入口",
+      "location": "北京/全国",
+      "org_type": "央企",
+      "industry": "航空航天",
+      "degree": "博士/硕士",
+      "major": "航空发动机、动力工程、机械等",
+      "summary": "重点关注航空发动机、燃气轮机、动力工程、机械与科研研发类岗位。自动更新脚本会继续补充公开招聘信息。",
+      "updated": "2026-08-27",
+      "deadline": "",
+      "score": 96,
+      "source_name": "官方公开招聘页面",
+      "url": "https://www.aecc.cn/",
+      "apply_url": "https://www.aecc.cn/",
+      "tags": [
+        "航空发动机",
+        "动力工程",
+        "博士"
+      ]
+    },
+    {
+      "id": "seed-2",
+      "company": "中国科学院力学研究所",
+      "title": "科研及人才招聘入口",
+      "location": "北京",
+      "org_type": "科研院所",
+      "industry": "航空航天",
+      "degree": "博士",
+      "major": "流体力学、工程力学、机械、航空航天等",
+      "summary": "北京科研院所，适合流体、动力、机械、可靠性及相关博士研发方向持续关注。",
+      "updated": "2026-08-27",
+      "deadline": "",
+      "score": 94,
+      "source_name": "官方公开招聘页面",
+      "url": "https://imech.cas.cn/zpxx/",
+      "apply_url": "https://imech.cas.cn/zpxx/",
+      "tags": [
+        "博士",
+        "流体",
+        "机械",
+        "可靠性"
+      ]
+    },
+    {
+      "id": "seed-3",
+      "company": "中国科学院工程热物理研究所",
+      "title": "科研岗位招聘入口",
+      "location": "北京",
+      "org_type": "科研院所",
+      "industry": "能源动力",
+      "degree": "博士/硕士",
+      "major": "动力工程、工程热物理、叶轮机械等",
+      "summary": "重点关注动力工程、工程热物理、叶轮机械、航空动力和机械相关科研岗位。",
+      "updated": "2026-08-27",
+      "deadline": "",
+      "score": 95,
+      "source_name": "官方公开招聘页面",
+      "url": "https://iet.cas.cn/team/zp/",
+      "apply_url": "https://iet.cas.cn/team/zp/",
+      "tags": [
+        "动力工程",
+        "叶轮机械",
+        "博士"
+      ]
+    }
+  ]
+}

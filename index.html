@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>北京博士求职中心</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--text:#172033;--muted:#6c778b;--line:#e6eaf0;--blue:#2563eb}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Microsoft YaHei",sans-serif}
+header{background:linear-gradient(135deg,#10265e,#2563eb);color:#fff;padding:28px 0}.wrap{width:min(1180px,92vw);margin:auto}
+h1{margin:0 0 8px;font-size:32px}header p{margin:0;opacity:.88}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}
+.stat,.panel,.job{background:var(--card);border:1px solid var(--line);border-radius:14px}
+.stat{padding:16px}.stat span{display:block;color:var(--muted);font-size:13px}.stat b{font-size:28px}
+.panel{padding:15px;margin-bottom:15px}.filters{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:10px}
+input,select{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;background:#fff}
+.jobs{display:grid;gap:11px}.job{padding:17px}.top{display:flex;justify-content:space-between;gap:18px}
+.title{font-size:18px;font-weight:700}.company{color:#1d4ed8;font-weight:700;margin-top:5px}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin:11px 0}.tag{font-size:12px;background:#f1f5f9;padding:5px 8px;border-radius:7px}
+.desc{color:var(--muted);font-size:14px;line-height:1.7}.score{font-size:25px;color:#2563eb;font-weight:800;white-space:nowrap}
+.foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:12px;margin-top:12px;gap:12px}
+a.btn{background:#2563eb;color:#fff;text-decoration:none;padding:9px 12px;border-radius:8px;font-size:13px}
+button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 10px;cursor:pointer}.active{background:#dbeafe;color:#1d4ed8}
+.small{font-size:12px;color:var(--muted)}footer{text-align:center;color:var(--muted);font-size:12px;padding:30px}
+@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.top,.foot{flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><h1>北京博士求职中心</h1><p>国央企 · 事业单位 · 科研院所 · 航空航天 · 能源动力 · 机械 · 半导体</p></div></header>
+<main class="wrap">
+<div class="stats">
+<div class="stat"><span>岗位总数</span><b id="sAll">0</b></div>
+<div class="stat"><span>北京岗位</span><b id="sBJ">0</b></div>
+<div class="stat"><span>博士岗位</span><b id="sPhD">0</b></div>
+<div class="stat"><span>高匹配岗位</span><b id="sHot">0</b></div>
+</div>
+<div class="panel">
+<div class="filters">
+<input id="q" placeholder="搜索单位 / 岗位 / 专业，如：航空发动机、流体、可靠性">
+<select id="loc"><option value="">全部地区</option><option selected>北京</option><option>全国</option></select>
+<select id="org"><option value="">全部单位</option><option>央企</option><option>国企</option><option>事业单位</option><option>科研院所</option></select>
+<select id="industry"><option value="">全部行业</option><option>航空航天</option><option>能源动力</option><option>机械装备</option><option>电子半导体</option></select>
+<select id="sort"><option value="updated">最新更新</option><option value="score">匹配度最高</option></select>
+</div>
+<div class="small" style="margin-top:10px">数据更新时间：<span id="updated">--</span> · 最终岗位要求和截止日期以官方公告为准。</div>
+</div>
+<div class="small" style="margin:12px 2px">找到 <b id="count">0</b> 个匹配岗位</div>
+<section id="jobs" class="jobs"></section>
+</main>
+<footer>免费个人求职信息聚合页 · 数据来自公开招聘页面</footer>
+<script>
+let DATA=[], META={}; const $=id=>document.getElementById(id);
+const states=JSON.parse(localStorage.getItem("jobStates")||"{}");
+function status(id){return states[id]||"未处理"}
+function setStatus(id,s){states[id]=s;localStorage.setItem("jobStates",JSON.stringify(states));render()}
+window.setStatus=setStatus;
+function text(j){return [j.company,j.title,j.location,j.org_type,j.industry,j.degree,j.major,j.summary,(j.tags||[]).join(" ")].join(" ").toLowerCase()}
+function render(){
+ let a=DATA.filter(j=>{
+   const q=$("q").value.trim().toLowerCase(),h=text(j);
+   return (!q||h.includes(q))&&(!$("loc").value||(j.location||"").includes($("loc").value))
+    &&(!$("org").value||(j.org_type||"").includes($("org").value))
+    &&(!$("industry").value||(j.industry||"").includes($("industry").value))
+ });
+ a.sort((x,y)=>$("sort").value==="score"?(y.score||0)-(x.score||0):String(y.updated||"").localeCompare(String(x.updated||"")));
+ $("count").textContent=a.length;
+ $("sAll").textContent=DATA.length;
+ $("sBJ").textContent=DATA.filter(x=>(x.location||"").includes("北京")).length;
+ $("sPhD").textContent=DATA.filter(x=>(x.degree||"").includes("博士")||text(x).includes("博士")).length;
+ $("sHot").textContent=DATA.filter(x=>(x.score||0)>=85).length;
+ $("jobs").innerHTML=a.map(j=>`<article class="job"><div class="top"><div>
+ <div class="title">${j.title||""}</div><div class="company">${j.company||""}</div>
+ <div class="tags"><span class="tag">${j.location||"地点待确认"}</span><span class="tag">${j.org_type||""}</span><span class="tag">${j.industry||""}</span><span class="tag">${j.degree||""}</span>${j.deadline?`<span class="tag">截止 ${j.deadline}</span>`:""}</div>
+ <div class="desc">${j.summary||j.major||"请查看官方公告。"}</div>
+ <div class="small">更新：${j.updated||"--"} · 来源：${j.source_name||"公开招聘页"}</div></div>
+ <div class="score">${j.score||0}<div class="small">匹配度</div></div></div>
+ <div class="foot"><a class="btn" target="_blank" rel="noopener" href="${j.apply_url||j.url||"#"}">官方公告 / 投递</a>
+ <div>${["收藏","已投递","不考虑"].map(s=>`<button class="${status(j.id)===s?"active":""}" onclick="setStatus('${j.id}','${s}')">${s}</button>`).join(" ")}</div></div></article>`).join("");
+}
+["q","loc","org","industry","sort"].forEach(id=>$(id).addEventListener("input",render));
+fetch("jobs.json?"+Date.now()).then(r=>r.json()).then(d=>{DATA=d.jobs||[];META=d.meta||{};$("updated").textContent=META.updated_at||"--";render()})
+.catch(()=>{$("jobs").innerHTML='<div class="panel">jobs.json 加载失败，请刷新页面。</div>'});
+</script>
+</body>
+</html>
