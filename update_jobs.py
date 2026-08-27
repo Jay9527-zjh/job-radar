@@ -1,5 +1,5 @@
 from pathlib import Path
-from datetime import datetime, date, timedelta
+from datetime import datetime, date
 from urllib.parse import urljoin, urlparse
 import hashlib
 import json
@@ -41,6 +41,11 @@ TARGET_WORDS = (
     "科研", "研发", "结构", "控制"
 )
 
+STRONG_TARGET_WORDS = tuple(
+    w for w in TARGET_WORDS
+    if w not in ("科研", "应届", "2027")
+)
+
 FIELD_MAP = {
     "航空航天": ("航空", "航天", "航空发动机", "燃气轮机", "飞行器", "高超声速"),
     "能源动力": ("动力工程", "工程热物理", "能源", "燃烧", "叶轮机械", "涡轮", "压缩机", "储能"),
@@ -51,6 +56,19 @@ FIELD_MAP = {
 BEIJING_WORDS = (
     "北京市", "北京海淀", "北京朝阳", "北京丰台", "北京昌平",
     "北京大兴", "北京顺义", "北京怀柔", "北京石景山", "北京"
+)
+
+LONG_TERM_PHRASES = ("长期有效", "长期招聘", "常年招聘")
+
+UNSUPPORTED_URL_EXTENSIONS = (
+    ".doc", ".docx", ".pdf", ".xls", ".xlsx", ".ppt", ".pptx",
+    ".zip", ".rar", ".7z", ".jpg", ".jpeg", ".png", ".gif"
+)
+
+OFF_TARGET_TITLE_PHRASES = (
+    "驾驶员", "司机", "财务助理", "财务管理", "基建财务", "财务处",
+    "综合事务", "办公室主任", "纪监审", "宣传主管", "中层领导",
+    "领导人员", "管理岗位人员", "劳务派遣"
 )
 
 TODAY = date.today()
@@ -140,6 +158,19 @@ def parse_iso(y, m, d):
     except Exception:
         return None
 
+def parse_date_from_title_or_url(title, url):
+    for s in (title or "", url or ""):
+        for p in (
+            r"(20\d{2})[年/\-.](\d{1,2})[月/\-.](\d{1,2})",
+            r"(20\d{2})(\d{2})(\d{2})",
+        ):
+            m = re.search(p, s)
+            if m:
+                d = parse_iso(*m.groups())
+                if d:
+                    return d
+    return None
+
 def extract_publish_date(text, fallback_title=""):
     s = normalize_spaced_digits(fallback_title + " " + text[:1800])
     patterns = (
@@ -173,13 +204,57 @@ def extract_deadline(text):
                 return d, False
     return None, False
 
+def is_long_term_notice(title, text):
+    title = clean(title)
+    if any(x in title for x in LONG_TERM_PHRASES):
+        return True
+
+    # Body text can contain unrelated links/sidebar snippets, so only trust
+    # long-term wording near the top of the article.
+    head = clean(text)[:1200]
+    return any(x in head for x in LONG_TERM_PHRASES)
+
+def is_stale_notice(title, published, long_term):
+    if not published:
+        return False
+    if (TODAY - published).days <= 550:
+        return False
+    # Keep old pages only when their own title clearly says the opportunity is
+    # long-running. This avoids stale yearly notices surviving because a page
+    # sidebar mentions "长期招聘".
+    return not (long_term and any(x in title for x in LONG_TERM_PHRASES))
+
+def is_supported_url(url):
+    parsed = urlparse(url)
+    if parsed.scheme not in ("http", "https"):
+        return False
+    if "http://" in parsed.path or "https://" in parsed.path:
+        return False
+    path = parsed.path.lower()
+    if "/channels/" in path:
+        return False
+    return not path.endswith(UNSUPPORTED_URL_EXTENSIONS)
+
+def is_target_relevant(title, text, degree):
+    title = clean(title)
+    hay = title + " " + clean(text[:2500])
+
+    if any(x in title for x in OFF_TARGET_TITLE_PHRASES):
+        return False
+
+    # Match the user's goal: Beijing/official research-heavy roles around PhD,
+    # aerospace, energy power, machinery, controls, and similar R&D tracks.
+    if "博士" in degree or "博士" in hay:
+        return True
+    return any(w in hay for w in STRONG_TARGET_WORDS)
+
 def is_obsolete_campus(title):
-    # By late summer 2026, "2026届校园招聘" is stale; keep 2027届 and later.
-    m = re.search(r"(20\d{2})届", title)
+    # By late summer 2026, older campus cohorts are stale; keep 2027届 and later.
+    m = re.search(r"(20\d{2})(?:届|年度).*校园招聘", title)
     if not m:
         return False
     cohort = int(m.group(1))
-    if "校园招聘" in title and cohort <= TODAY.year and TODAY.month >= 7:
+    if cohort <= TODAY.year and TODAY.month >= 7:
         return True
     return False
 
@@ -287,7 +362,7 @@ def extract_links(source):
             continue
 
         url = urljoin(source["url"], a["href"]).split("#")[0]
-        if not url.startswith(("http://", "https://")):
+        if not is_supported_url(url):
             continue
         if url in seen:
             continue
@@ -319,15 +394,20 @@ def crawl_source(source):
                 continue
 
             text = article_text(html)
-            published = extract_publish_date(text, title)
-            deadline, long_term = extract_deadline(text)
+            published = (
+                parse_date_from_title_or_url(title, url)
+                or extract_publish_date(text, title)
+            )
+            deadline, deadline_long_term = extract_deadline(text)
+            long_term = deadline_long_term or is_long_term_notice(title, text)
 
             # Explicitly expired.
             if deadline and deadline < TODAY:
                 continue
 
-            # Very old notices are not useful unless explicitly long-term.
-            if published and (TODAY - published).days > 550 and not long_term:
+            # Very old notices are not useful unless their title explicitly
+            # marks the opportunity as long-running.
+            if is_stale_notice(title, published, long_term):
                 continue
 
             # Old campus cohorts are discarded even if deadline was not parsed.
@@ -336,6 +416,9 @@ def crawl_source(source):
 
             location = infer_location(text, source.get("default_location"))
             degree = infer_degree(text, source.get("default_degree"))
+            if not is_target_relevant(title, text, degree):
+                continue
+
             industry = infer_industry(text, source.get("industry"))
             score = score_job(
                 title, text, location, degree,
@@ -395,12 +478,13 @@ def main():
     # Do NOT merge the old jobs.json, otherwise V1's false positives survive forever.
     by_url = {}
 
-    for job in pinned_jobs():
-        by_url[job["url"]] = job
-
     for source in config["sources"]:
         for job in crawl_source(source):
             by_url[job["url"]] = job
+
+    # Curated high-value leads override the crawler's thin article extraction.
+    for job in pinned_jobs():
+        by_url[job["url"]] = job
 
     jobs = list(by_url.values())
     jobs.sort(key=lambda x: (x.get("score", 0), x.get("updated", "")), reverse=True)
