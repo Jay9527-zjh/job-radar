@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-10-13 06:44",
+    "updated_at": "2026-10-14 04:48",
     "version": "V3-wide",
     "sources": [
       "中国航天科工集团有限公司2027届校园招聘",
@@ -517,29 +517,6 @@
       ]
     },
     {
-      "id": "61c29a9d1b6fbd93",
-      "company": "中国科学院空间应用工程与技术中心",
-      "title": "中国科学院空间应用工程与技术中心质量标准处公开招聘启事",
-      "location": "北京",
-      "org_type": "科研院所",
-      "industry": "机械装备",
-      "degree": "硕士/博士",
-      "major": "",
-      "summary": "招聘岗位、职责及任职条件 GJB5000 体系管理及横向质量主管 1 名 （一）岗位职责 1. 负责 GJB5000 体系的维护与运行管理，组织内审、外审及认证迎审工作，统筹体系文件的制修订与受控管理； 2. 负责体系运行的绩效监控与数据分析，推动质量改进闭环，组织相关培训及人员资格管理； 3. 负责横向产品研制全过程质量管控，统筹检验与标审人员资质及印章管理，确保各阶段质量合规； 4. 负责产品质量数据与质量信息的收集分析与报送管理，策划并组织科研产品质量提升专项活动； 5. 完成领导交办的其他事项。 （二）任职",
-      "updated": "2026-07-15",
-      "deadline": "",
-      "score": 94,
-      "source_name": "中国科学院空间应用工程与技术中心官网",
-      "url": "https://csu.cas.cn/gb/yjdw/rczp/202607/t20260715_8247666.html",
-      "apply_url": "https://csu.zhiye.com/AllJob",
-      "tags": [
-        "可靠性",
-        "科研",
-        "控制",
-        "总体"
-      ]
-    },
-    {
       "id": "222cd73639812aa4",
       "company": "中国科学院工程热物理研究所",
       "title": "中国科学院工程热物理研究所2027年招聘启事（青岛） [2026-09-29]",
@@ -569,22 +546,23 @@
       ]
     },
     {
-      "id": "2819dd9b830be5ca",
+      "id": "61c29a9d1b6fbd93",
       "company": "中国科学院空间应用工程与技术中心",
-      "title": "中国科学院空间应用工程与技术中心科技处科技成果管理岗位公开招聘启事",
+      "title": "中国科学院空间应用工程与技术中心质量标准处公开招聘启事",
       "location": "北京",
       "org_type": "科研院所",
-      "industry": "航空航天",
+      "industry": "机械装备",
       "degree": "硕士/博士",
       "major": "",
-      "summary": "招聘岗位、职责及任职条件 科技成果管理岗位（六级职员） 1 名 （一）岗位职责 1. 负责编制中心科技成果中长期发展规划，建立健全覆盖成果申报、知识产权保护、科技成果评价、科技奖励管理、成果转移转化及收益分配激励的全链条制度体系，并推动相关政策的宣贯与落实。 2. 统筹组织各级各类科技奖励的策划、培育、申报与全过程服务保障；负责专利、软件著作权、高水平学术论文、奖励科技成果的登记、审核、归档及数据统计与信息公开工作。 3. 负责组织中心各领域科技专家的遴选、推荐、报送及动态维护工作（含各级各类专家库入库、项目评审专",
+      "summary": "招聘岗位、职责及任职条件 GJB5000 体系管理及横向质量主管 1 名 （一）岗位职责 1. 负责 GJB5000 体系的维护与运行管理，组织内审、外审及认证迎审工作，统筹体系文件的制修订与受控管理； 2. 负责体系运行的绩效监控与数据分析，推动质量改进闭环，组织相关培训及人员资格管理； 3. 负责横向产品研制全过程质量管控，统筹检验与标审人员资质及印章管理，确保各阶段质量合规； 4. 负责产品质量数据与质量信息的收集分析与报送管理，策划并组织科研产品质量提升专项活动； 5. 完成领导交办的其他事项。 （二）任职",
       "updated": "2026-07-15",
       "deadline": "",
-      "score": 92,
+      "score": 91,
       "source_name": "中国科学院空间应用工程与技术中心官网",
-      "url": "https://csu.cas.cn/gb/yjdw/rczp/202607/t20260715_8249124.html",
+      "url": "https://csu.cas.cn/gb/yjdw/rczp/202607/t20260715_8247666.html",
       "apply_url": "https://csu.zhiye.com/AllJob",
       "tags": [
+        "可靠性",
         "科研",
         "控制",
         "总体"
@@ -607,6 +585,28 @@
       "url": "https://csu.cas.cn/gb/yjdw/rczp/202607/t20260729_8256756.html",
       "apply_url": "https://csu.zhiye.com/AllJob",
       "tags": [
+        "控制",
+        "总体"
+      ]
+    },
+    {
+      "id": "2819dd9b830be5ca",
+      "company": "中国科学院空间应用工程与技术中心",
+      "title": "中国科学院空间应用工程与技术中心科技处科技成果管理岗位公开招聘启事",
+      "location": "北京",
+      "org_type": "科研院所",
+      "industry": "航空航天",
+      "degree": "硕士/博士",
+      "major": "",
+      "summary": "招聘岗位、职责及任职条件 科技成果管理岗位（六级职员） 1 名 （一）岗位职责 1. 负责编制中心科技成果中长期发展规划，建立健全覆盖成果申报、知识产权保护、科技成果评价、科技奖励管理、成果转移转化及收益分配激励的全链条制度体系，并推动相关政策的宣贯与落实。 2. 统筹组织各级各类科技奖励的策划、培育、申报与全过程服务保障；负责专利、软件著作权、高水平学术论文、奖励科技成果的登记、审核、归档及数据统计与信息公开工作。 3. 负责组织中心各领域科技专家的遴选、推荐、报送及动态维护工作（含各级各类专家库入库、项目评审专",
+      "updated": "2026-07-15",
+      "deadline": "",
+      "score": 89,
+      "source_name": "中国科学院空间应用工程与技术中心官网",
+      "url": "https://csu.cas.cn/gb/yjdw/rczp/202607/t20260715_8249124.html",
+      "apply_url": "https://csu.zhiye.com/AllJob",
+      "tags": [
+        "科研",
         "控制",
         "总体"
       ]
@@ -951,7 +951,7 @@
       "summary": "惠阳航空螺旋桨有限责任公司 气动设计员 校园招聘 研发设计类 河北省-保定 发布时间：2026-07-15",
       "updated": "2026-07-15",
       "deadline": "",
-      "score": 45,
+      "score": 42,
       "source_name": "军工人才网校招职位",
       "url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fd93cf856c3f733f7d3e&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
       "apply_url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fd93cf856c3f733f7d3e&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
@@ -972,7 +972,7 @@
       "summary": "惠阳航空螺旋桨有限责任公司 复材结构设计员 校园招聘 研发设计类 河北省-保定 发布时间：2026-07-15",
       "updated": "2026-07-15",
       "deadline": "",
-      "score": 45,
+      "score": 42,
       "source_name": "军工人才网校招职位",
       "url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fe32cf856c3f733f7d43&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
       "apply_url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fe32cf856c3f733f7d43&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
@@ -993,7 +993,7 @@
       "summary": "惠阳航空螺旋桨有限责任公司 系统总体设计员 校园招聘 研发设计类 河北省-保定 发布时间：2026-07-15",
       "updated": "2026-07-15",
       "deadline": "",
-      "score": 45,
+      "score": 42,
       "source_name": "军工人才网校招职位",
       "url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fe92cf856c3f733f7d44&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
       "apply_url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fe92cf856c3f733f7d44&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
@@ -1014,7 +1014,7 @@
       "summary": "惠阳航空螺旋桨有限责任公司 系统工程设计员 校园招聘 研发设计类 河北省-保定 发布时间：2026-07-15",
       "updated": "2026-07-15",
       "deadline": "",
-      "score": 43,
+      "score": 40,
       "source_name": "军工人才网校招职位",
       "url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fcdecf856c3f733f7d39&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
       "apply_url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fcdecf856c3f733f7d39&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
@@ -1034,7 +1034,7 @@
       "summary": "惠阳航空螺旋桨有限责任公司 适航设计员 校园招聘 研发设计类 河北省-保定 发布时间：2026-07-15",
       "updated": "2026-07-15",
       "deadline": "",
-      "score": 43,
+      "score": 40,
       "source_name": "军工人才网校招职位",
       "url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fcaacf856c3f733f7d37&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
       "apply_url": "https://www.jgrc.cn/hrbj/position/detail?positionId=6a55fcaacf856c3f733f7d37&recruitmentType=CAMPUSRECRUITMENT&currentLang=zh_CN",
